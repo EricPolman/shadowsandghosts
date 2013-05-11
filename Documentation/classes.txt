@@ -1,0 +1,15 @@
+GameObject
+	m_mesh		(Mesh)
+	m_position	(sf::Vector3f)
+	m_rotation	(sf::Vector3f)
+	m_scale		(sf::Vector3f)
+	m_texture	(string (referentie naar imagemanager) )
+	m_material	(Material)
+
+ImageManager (singleton)
+	m_images		(map<string, sf::Image>)
+
+GameObjectManager (singleton)
+	m_gameObjects		(map)
+
+Scene

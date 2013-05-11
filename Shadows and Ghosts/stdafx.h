@@ -14,3 +14,6 @@
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
 #include <SFML/OpenGL.hpp>
+
+//typedefs
+typedef std::string string;

@@ -2,68 +2,11 @@
 //
 
 #include "stdafx.h"
+#include "GameObject.h"
 
 static int g_windowWidth = 800; 
 static int g_windowHeight = 600;
-
-void drawCube(){
-	glBegin(GL_QUADS);
-		glColor3f(1,0,0);
-		glNormal3f(0, 0, -1);
-		glVertex3f(-50.f, -50.f, -50.f);
-		glVertex3f(-50.f,  50.f, -50.f);
-		glVertex3f( 50.f,  50.f, -50.f);
-		glVertex3f( 50.f, -50.f, -50.f);
-		
-		glColor3f(0,1,0);
-		glNormal3f(0, 0, 1);
-		glVertex3f(-50.f, -50.f, 50.f);
-		glVertex3f(-50.f,  50.f, 50.f);
-		glVertex3f( 50.f,  50.f, 50.f);
-		glVertex3f( 50.f, -50.f, 50.f);
-		
-		glColor3f(0,0,1);
-		glNormal3f(-1, 0, 0);
-		glVertex3f(-50.f, -50.f, -50.f);
-		glVertex3f(-50.f,  50.f, -50.f);
-		glVertex3f(-50.f,  50.f,  50.f);
-		glVertex3f(-50.f, -50.f,  50.f);
-		
-		glColor3f(1,0,1);
-		glNormal3f(1, 0, 0);
-		glVertex3f(50.f, -50.f, -50.f);
-		glVertex3f(50.f,  50.f, -50.f);
-		glVertex3f(50.f,  50.f,  50.f);
-		glVertex3f(50.f, -50.f,  50.f);
-		
-		glColor3f(1,1,0);
-		glNormal3f(0, -1, 0);
-		glVertex3f(-50.f, -50.f,  50.f);
-		glVertex3f(-50.f, -50.f, -50.f);
-		glVertex3f( 50.f, -50.f, -50.f);
-		glVertex3f( 50.f, -50.f,  50.f);
-		
-		glColor3f(0,1,1);
-		glNormal3f(0, 1, 0);
-		glVertex3f(-50.f, 50.f,  50.f);
-		glVertex3f(-50.f, 50.f, -50.f);
-		glVertex3f( 50.f, 50.f, -50.f);
-		glVertex3f( 50.f, 50.f,  50.f);
-	glEnd();
-}
-
-void positionAndRotate(float xPos, float yPos, float zPos, float xAngle, float yAngle, float zAngle){
-	glPushMatrix();
-	
-	glTranslatef(xPos, yPos, zPos);
-	glRotatef(xAngle, 1.0f, 0, 0);
-	glRotatef(yAngle, 0, 1.0f, 0);
-	glRotatef(zAngle, 0, 0, 1.0f);
-
-	drawCube();
-
-	glPopMatrix();
-}
+static const int g_amountOfGameObjects = 35;
 
 void updateProjection(bool toggle){
 	static bool usePerspective = true;
@@ -112,7 +55,16 @@ int _tmain(int argc, _TCHAR* argv[])
 	// Setup a perspective projection
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	gluPerspective(60.f, 1.33f, 0.01f, 500.f);
+	gluPerspective(60.f, 1.33f, 0.01f, 10000.f);
+
+	// GameObjects for testing
+	GameObject* gameObjects[g_amountOfGameObjects];
+	for(int i = 0, col = 0, row = -1; i < g_amountOfGameObjects; i++){
+		col++;
+		if(i % 7 == 0) {row++;col = 0;}
+		gameObjects[i] = new GameObject("no-texture-yet");
+		gameObjects[i]->move(-600 + col * 200,-400 + row * 200,-1000);
+	}
 
 	bool running = true;
 	while (running) {	
@@ -137,8 +89,11 @@ int _tmain(int argc, _TCHAR* argv[])
 
 		glMatrixMode(GL_MODELVIEW);
 		glLoadIdentity();
-		
-		positionAndRotate(0, 0, -200, elapsedTime * 10, elapsedTime * 25, elapsedTime * 20);
+
+		for(int i = 0; i < g_amountOfGameObjects; i++){
+			gameObjects[i]->rotate(fDeltaTime * 40, fDeltaTime * 40, fDeltaTime * 40);
+			gameObjects[i]->draw();
+		}
 		
 		window.display();
     }
