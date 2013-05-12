@@ -20,9 +20,9 @@ public:
 	sf::Vector3f m_rotation;
 	sf::Vector3f m_scale;
 	
-	void move(float, float, float);
-	void scale(float, float, float);
-	void rotate(float, float, float);
+	void move(float x, float y, float z);
+	void scale(float x, float y, float z);
+	void rotate(float pitch, float yaw, float roll);
 
 	Model m_model;
 };

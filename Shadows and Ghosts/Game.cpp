@@ -2,17 +2,15 @@
 #include "Game.h"
 #include "InputManager.h"
 
-static const int g_amountOfGameObjects = 35;
+static const int g_amountOfGameObjects = 1;
 GameObject* gameObjects[g_amountOfGameObjects];
 
 Game::Game(void)
 {
-	for(int i = 0, col = 0, row = -1; i < g_amountOfGameObjects; i++){
-		col++;
-		if(i % 7 == 0) {row++;col = 0;}
+	for(int i = 0; i < g_amountOfGameObjects; i++){
 		GameObject* go = new GameObject("no-texture-yet");
 		GameObjectManager::getInstance()->add(go);
-		go->move(-600 + col * 200,-400 + row * 200,-1000);
+		go->move(0,0,-200);
 	}
 }
 

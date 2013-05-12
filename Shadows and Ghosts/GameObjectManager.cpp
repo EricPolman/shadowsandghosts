@@ -35,7 +35,7 @@ GameObjectManager* GameObjectManager::getInstance()
 void GameObjectManager::update(float fDeltaTime)
 {
 	for(std::vector<GameObject*>::iterator i = m_gameObjects.begin(); i != m_gameObjects.end(); ++i){
-		(*i)->rotate(fDeltaTime * 40, fDeltaTime * 40, fDeltaTime * 40);
+		(*i)->update(fDeltaTime);
 	}
 }
 

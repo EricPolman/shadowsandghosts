@@ -1,5 +1,6 @@
 #include "StdAfx.h"
 #include "GameObject.h"
+#include "InputManager.h"
 
 
 GameObject::GameObject(string texture)
@@ -18,7 +19,26 @@ GameObject::~GameObject(void)
 
 void GameObject::update(float fDeltaTime)
 {
-	
+	rotate(fDeltaTime * 40, fDeltaTime * 40, fDeltaTime * 40);
+
+	if(InputManager::getInstance()->isKeyDown(sf::Keyboard::A)){
+		move(-150 * fDeltaTime,0,0);
+	}
+	if(InputManager::getInstance()->isKeyDown(sf::Keyboard::D)){
+		move(150 * fDeltaTime,0,0);
+	}
+	if(InputManager::getInstance()->isKeyDown(sf::Keyboard::W)){
+		move(0,150 * fDeltaTime,0);
+	}
+	if(InputManager::getInstance()->isKeyDown(sf::Keyboard::S)){
+		move(0,-150 * fDeltaTime,0);
+	}
+	if(InputManager::getInstance()->isKeyDown(sf::Keyboard::E)){
+		move(0,0,150 * fDeltaTime);
+	}
+	if(InputManager::getInstance()->isKeyDown(sf::Keyboard::Q)){
+		move(0,0,-150 * fDeltaTime);
+	}
 }
 
 void GameObject::draw()
@@ -45,7 +65,7 @@ void GameObject::scale(float x, float y, float z)
 	m_scale = sf::Vector3f(x * m_scale.x ,y * m_scale.y ,z * m_scale.z);
 }
 
-void GameObject::rotate(float x, float y, float z)
+void GameObject::rotate(float pitch, float yaw, float roll)
 {
-	m_rotation += sf::Vector3f(x,y,z);
+	m_rotation += sf::Vector3f(pitch,yaw,roll);
 }
