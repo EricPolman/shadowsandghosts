@@ -1,5 +1,6 @@
 #include "StdAfx.h"
 #include "Game.h"
+#include "InputManager.h"
 
 static const int g_amountOfGameObjects = 35;
 GameObject* gameObjects[g_amountOfGameObjects];
@@ -24,6 +25,8 @@ Game::~Game(void)
 void Game::update(float fDeltaTime)
 {
 	GameObjectManager::getInstance()->update(fDeltaTime);
+
+	InputManager::getInstance()->update(fDeltaTime);
 }
 
 void Game::draw()
