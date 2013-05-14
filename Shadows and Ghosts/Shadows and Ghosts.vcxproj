@@ -50,7 +50,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\Data\libs\SFML-2.0-rc\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Data\libs\bullet\src;D:\Data\libs\SFML-2.0-rc\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -105,6 +105,23 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="ImageManager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\libs\bullet_vs2010\src\BulletCollision\BulletCollision.vcxproj">
+      <Project>{58d8f211-df6e-43ec-88d7-e33e7ecb295d}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\libs\bullet_vs2010\src\BulletDynamics\BulletDynamics.vcxproj">
+      <Project>{1437d63c-1c28-4436-aa52-f59220794852}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\libs\bullet_vs2010\src\BulletMultiThreaded\BulletMultiThreaded.vcxproj">
+      <Project>{8aa5f7e4-de24-4e71-bd45-d89107e43b57}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\libs\bullet_vs2010\src\BulletSoftBody\BulletSoftBody.vcxproj">
+      <Project>{8de68e79-82f3-41cc-b8a3-7a7624c032a4}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\libs\bullet_vs2010\src\LinearMath\LinearMath.vcxproj">
+      <Project>{4309bef4-782a-4cad-8137-fc693ff1c6bf}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
