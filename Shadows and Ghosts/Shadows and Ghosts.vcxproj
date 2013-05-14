@@ -107,20 +107,20 @@
     <ClCompile Include="ImageManager.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\libs\bullet_vs2010\src\BulletCollision\BulletCollision.vcxproj">
-      <Project>{58d8f211-df6e-43ec-88d7-e33e7ecb295d}</Project>
+    <ProjectReference Include="..\libs\bullet\src\BulletCollision\BulletCollision.vcxproj">
+      <Project>{8cd8edfb-ae75-4782-a3c7-3f0da4214fce}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\libs\bullet_vs2010\src\BulletDynamics\BulletDynamics.vcxproj">
-      <Project>{1437d63c-1c28-4436-aa52-f59220794852}</Project>
+    <ProjectReference Include="..\libs\bullet\src\BulletDynamics\BulletDynamics.vcxproj">
+      <Project>{23cd3e08-81a3-4c89-b5dc-49b9006eed5f}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\libs\bullet_vs2010\src\BulletMultiThreaded\BulletMultiThreaded.vcxproj">
-      <Project>{8aa5f7e4-de24-4e71-bd45-d89107e43b57}</Project>
+    <ProjectReference Include="..\libs\bullet\src\BulletMultiThreaded\BulletMultiThreaded.vcxproj">
+      <Project>{77249e73-c120-44fb-9a12-4359c458212d}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\libs\bullet_vs2010\src\BulletSoftBody\BulletSoftBody.vcxproj">
-      <Project>{8de68e79-82f3-41cc-b8a3-7a7624c032a4}</Project>
+    <ProjectReference Include="..\libs\bullet\src\BulletSoftBody\BulletSoftBody.vcxproj">
+      <Project>{2e6e12d8-de13-4c8f-b36b-fbd91b4672b4}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\libs\bullet_vs2010\src\LinearMath\LinearMath.vcxproj">
-      <Project>{4309bef4-782a-4cad-8137-fc693ff1c6bf}</Project>
+    <ProjectReference Include="..\libs\bullet\src\LinearMath\LinearMath.vcxproj">
+      <Project>{65047878-12ab-49a2-bc0c-e5eff6948b1e}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

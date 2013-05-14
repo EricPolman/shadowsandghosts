@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\..\..\..\libs\bullet\Demos\OpenCLClothDemo\cl_cloth_demo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\libs\bullet\Demos\OpenCLClothDemo\gl_win.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\libs\bullet\Demos\OpenCLClothDemo\clstuff.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\libs\bullet\src\BulletMultiThreaded\GpuSoftBodySolvers\OpenCL\MiniCL\MiniCLTaskWrap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\libs\bullet\Demos\SharedOpenCL\btOpenCLUtils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\..\..\..\libs\bullet\Demos\OpenCLClothDemo\clstuff.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\libs\bullet\Demos\OpenCLClothDemo\gl_win.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\libs\bullet\Demos\SharedOpenCL\btOpenCLUtils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\libs\bullet\Demos\SharedOpenCL\btOpenCLInclude.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\..\..\..\..\..\..\libs\bullet\Demos\OpenCLClothDemo\MiniCL\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{CA8F2C42-59BE-40B8-9AF6-7C5BF90F4450}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{DF96B554-D43E-4995-913E-BF6471AAB7A4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
